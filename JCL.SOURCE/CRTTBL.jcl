@@ -1,0 +1,82 @@
+//CREADB2  JOB (ACCT),'CREAR TABLAS DB2',CLASS=A,MSGCLASS=X,
+//             NOTIFY=&SYSUID
+//*
+//* JCL PARA CREAR TABLAS DB2 Y CARGAR DATOS INICIALES.
+//* CONEXION DB2 SEGUN AMBIENTE DE LA GUIA:
+//*   SUBSYSTEM : DBDG
+//*   LOADLIB   : DSND10.SDSNLOAD
+//*   EXITLIB   : DSND10.DBDG.SDSNEXIT
+//*   RUNLIB    : DSND10.DBDG.RUNLIB.LOAD
+//*   PROGRAMA  : DSNTEP2
+//*   PLAN      : DSNTEP13
+//*
+//STEP01   EXEC PGM=IKJEFT01,DYNAMNBR=20
+//STEPLIB  DD DSN=DSND10.SDSNLOAD,DISP=SHR
+//         DD DSN=DSND10.DBDG.SDSNEXIT,DISP=SHR
+//         DD DSN=DSND10.DBDG.RUNLIB.LOAD,DISP=SHR
+//SYSTSPRT DD SYSOUT=*
+//SYSPRINT DD SYSOUT=*
+//SYSUDUMP DD SYSOUT=*
+//SYSTSIN  DD *
+  DSN SYSTEM(DBDG)
+  RUN PROGRAM(DSNTEP2) PLAN(DSNTEP13)
+  END
+/*
+//SYSIN    DD *
+-- ================================================================
+-- TABLA: LIBROS
+-- ================================================================
+CREATE TABLE LIBROS (
+    ID               VARCHAR(10)   NOT NULL,
+    TITULO           VARCHAR(100)  NOT NULL,
+    AUTOR            VARCHAR(100)  NOT NULL,
+    EDITORIAL        VARCHAR(100)  NOT NULL,
+    CATEGORIA        VARCHAR(50)   NOT NULL,
+    STOCK_TOTAL      INTEGER       NOT NULL,
+    STOCK_DISPONIBLE INTEGER       NOT NULL,
+    UBICACION        VARCHAR(50),
+    CONSTRAINT PK_LIBROS PRIMARY KEY (ID),
+    CONSTRAINT CK_LIBROS_STOCK_TOTAL CHECK (STOCK_TOTAL >= 0),
+    CONSTRAINT CK_LIBROS_STOCK_DISP CHECK (STOCK_DISPONIBLE >= 0),
+    CONSTRAINT CK_LIBROS_STOCK_REL CHECK
+        (STOCK_DISPONIBLE <= STOCK_TOTAL)
+);
+
+-- ================================================================
+-- TABLA: USUARIOS
+-- ================================================================
+CREATE TABLE USUARIOS (
+    ID        INTEGER      NOT NULL,
+    NOMBRE    VARCHAR(50)  NOT NULL,
+    APELLIDO  VARCHAR(50)  NOT NULL,
+    CARGO     VARCHAR(50)  NOT NULL,
+    EMAIL     VARCHAR(100),
+    ESTADO    VARCHAR(20)  NOT NULL,
+    CONSTRAINT PK_USUARIOS PRIMARY KEY (ID)
+);
+
+-- ================================================================
+-- TABLA: PRESTAMOS
+-- Nota: el dato recibido tenia ID_LIBRO = 1, pero el libro cargado
+-- tiene ID = ABC123DEF4. El insert usa ABC123DEF4 para respetar la FK.
+-- ================================================================
+CREATE TABLE PRESTAMOS (
+    ID               INTEGER       NOT NULL,
+    ID_LIBRO         VARCHAR(10)   NOT NULL,
+    ID_USUARIO       INTEGER       NOT NULL,
+    ID_STOCK         INTEGER       NOT NULL,
+    FECHA_INICIO     DATE          NOT NULL,
+    FECHA_FIN        DATE          NOT NULL,
+    ESTADO           VARCHAR(20)   NOT NULL,
+    FECHA_DEVOLUCION DATE,
+    MULTA            DECIMAL(10,2) NOT NULL DEFAULT 0,
+    CONSTRAINT PK_PRESTAMOS PRIMARY KEY (ID),
+    CONSTRAINT FK_PRESTAMOS_LIBROS FOREIGN KEY (ID_LIBRO)
+        REFERENCES LIBROS (ID),
+    CONSTRAINT FK_PRESTAMOS_USUARIOS FOREIGN KEY (ID_USUARIO)
+        REFERENCES USUARIOS (ID),
+    CONSTRAINT CK_PRESTAMOS_MULTA CHECK (MULTA >= 0)
+);
+
+COMMIT;
+/*

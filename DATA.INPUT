@@ -1,0 +1,12 @@
+ID,Titulo,Autor,Editorial,Categoria,STOCK_TOTAL,STOCK_DISPONIBLE,UBICACION
+ABC123DEF4,Harry Potter,J.K Rowling,Salamandra,Fantasia,100,100,Estante C3
+ABC123DEF5,El Señor de los Anillos,J.R.R. Tolkien,Minotauro,Fantasia,50,45,Estante A1
+ABC123DEF6,Cien años de soledad,Gabriel Garcia Marquez,Sudamericana,Ficcion,30,20,Estante B2
+ABC123DEF7,1984,George Orwell,Seix Barral,Ciencia Ficcion,40,35,Estante C3
+ABC123DEF8,Orgullo y prejuicio,Jane Austen,Penguin,Romance,25,25,Estante D4
+ABC123DEF9,El codigo Da Vinci,Dan Brown,Umbriel,Misterio,60,50,Estante E5
+ABC123DEF0,Don Quijote de la Mancha,Miguel de Cervantes,RAE,Clasico,15,10,Estante F6
+ABC123DEF1,Matar a un ruiseñor,Harper Lee,Zeta Bolsillo,Ficcion,35,30,Estante G7
+ABC123DEF2,La sombra del viento,Carlos Ruiz Zafon,Planeta,Misterio,45,40,Estante H8
+ABC123DEF3,El alquimista,Paulo Coelho,Planeta,Autoayuda,80,75,Estante I9
+ABC123DEG1,Fahrenheit 451,Ray Bradbury,Minotauro,Ciencia Ficcion,55,50,Estante J10
