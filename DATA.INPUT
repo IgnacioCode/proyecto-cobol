@@ -1,12 +1,15 @@
-ID,Titulo,Autor,Editorial,Categoria,STOCK_TOTAL,STOCK_DISPONIBLE,UBICACION
-ABC123DEF4,Harry Potter y la Piedra Filosofal,J.K. Rowling,Salamandra,Fantasia,100,100,Estante C3
-ABC123DEF5,El Senor de los Anillos,J.R.R. Tolkien,Minotauro,Fantasia,050,045,Estante A1
-ABC123DEF6,Cien Anios de Soledad,Gabriel Garcia Marquez,Sudamericana,Ficcion,030,020,Estante B2
-ABC123DEF7,1984,George Orwell,Seix Barral,Ciencia Ficcion,040,035,Estante C3
-ABC123DEF8,Orgullo y Prejuicio,Jane Austen,Penguin,Romance,025,025,Estante D4
-ABC123DEF9,El Codigo Da Vinci,Dan Brown,Umbriel,Misterio,060,050,Estante E5
-ABC123DEF0,Don Quijote de la Mancha,Miguel de Cervantes,RAE,Clasico,015,010,Estante F6
-ABC123DEF1,Matar a un Ruisenior,Harper Lee,Zeta Bolsillo,Ficcion,035,030,Estante G7
-ABC123DEF2,La Sombra del Viento,Carlos Ruiz Zafon,Planeta,Misterio,045,040,Estante H8
-ABC123DEF3,El Alquimista,Paulo Coelho,Planeta,Autoayuda,080,075,Estante I9
-ABC123DEG1,Fahrenheit 451,Ray Bradbury,Minotauro,Ciencia Ficcion,055,050,Estante J1
+LIB0000001 Introduccion a los Sistemas Operativos                       Silberschatz Abraham                     Wiley                          2020 SISTEMAS             005 A-01-01
+LIB0000002 Arquitectura de Computadoras                                 Patterson David                          Morgan Kaufmann                2019 ARQUITECTURA         004 A-02-01
+LIB0000003 El Lenguaje de Programacion C                                Kernighan Brian                          Prentice Hall                  2017 PROGRAMACION         006 B-01-01
+LIB0000004 Fundamentos de Base de Datos                                 Silberschatz Abraham                     McGraw-Hill                    2019 BASE DE DATOS        003 B-02-01
+LIB0000005 Redes de Computadoras                                        Tanenbaum Andrew                         Pearson                        2021 REDES                004 C-01-01
+LIB0000006 Ingenieria del Software                                      Sommerville Ian                          Pearson                        2018 INGENIERIA           005 C-02-01
+LIB0000007 Algoritmos y Estructuras de Datos                            Cormen Thomas                            MIT Press                      2020 PROGRAMACION         002 B-01-02
+LIB0000008 Inteligencia Artificial Moderna                              Russell Stuart                           Pearson                        2020 INTELIGENCIA ART     003 D-01-01
+LIB0000009 Calculo para Ingenieros                                      Stewart James                            Cengage                        2016 MATEMATICA           007 D-02-01
+LIB0000010 Algebra Lineal y sus Aplicaciones                            Lay David                                Pearson                        2018 MATEMATICA           005 D-02-02
+LIB0000011 Programacion Orientada a Objetos Java                        Deitel Paul                              Pearson                        2019 PROGRAMACION         004 B-01-03
+LIB0000012 Sistemas Distribuidos Principios                             Tanenbaum Andrew                         Pearson                        2017 SISTEMAS             002 A-01-02
+LIB0000013 Seguridad en Sistemas Informaticos                           Stallings William                        Pearson                        2022 SEGURIDAD            003 E-01-01
+LIB0000014 Compiladores Principios Herramientas                         Aho Alfred                               Pearson                        2015 PROGRAMACION         002 B-01-04
+LIB0000015 Probabilidad y Estadistica Ingenieros                        Walpole Ronald                           Pearson                        2017 MATEMATICA           006 D-02-03
